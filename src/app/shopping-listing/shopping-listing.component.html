@@ -1,0 +1,18 @@
+
+<div class="row">
+    <div class="col-md-12 new-btn input-group" style="text-align: center; margin-top: 1rem;">
+        <input style="width: 15%;" type="number" placeholder="1" name="quantity" id="quantity" min="1" max="20" [(ngModel)]="item.quantity">
+        <input class="inputName"type="text" id="myInput" placeholder="Title..." [(ngModel)]="item.itemName" required>
+        <button class="btn btn-secondary" style="margin-left: 0.5rem; font-size: 1.5rem;" (click)="addItem()">Add</button>
+    </div>
+</div>
+<hr>
+<div class="col">
+    <h4 class="text-primary mt-4">List : </h4>
+    
+    <div class="shopping-listing" style=" overflow-y: auto; height: 350px;">
+        <app-shopping-listing-element *ngFor="let item of items" [item]="item" (click)='select(item)'
+            (fireDelete)='deleteCurrent(item)'>
+        </app-shopping-listing-element>
+    </div>
+</div>

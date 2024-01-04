@@ -1,0 +1,9 @@
+<div class="p-1 shadow border" id="tasks">
+    <div class="input-group row ps-3">
+        <button class=" btn btn-outline-primary col-md-6 shopping-listing-element ui positive" [ngClass]="{'shopping-listing-element-selected': selected}">
+            {{getFullItemName()}}
+        </button>
+        <div class="btn btn-outline-danger col" name="delete" (click)="delete()">Remove</div>
+        <!-- <div class="btn btn-outline-danger col" name="delete" *ngIf="!edit">View</div> -->
+    </div>
+</div>
