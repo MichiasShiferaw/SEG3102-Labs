@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+}
+
+body{
+    display: flex;
+
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+input {
+    border-style: double;
+    width: 100%;
+}
+
+.operations{ 
+    display: flex;
+    justify-content: center;
+}
+
+
+
+ .operations button {
+    background-color: rgb(174, 171, 171);
+    padding: .5rem 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.operations button:hover {
+    background-color: #3d282d;
+    color: #c0c2cb;
+}
+
+label {
+    font-size: 1.2rem;
+}
+
+.operations {
+    border-spacing: 1.3rem;
+
+}
+
+.resetContainer {
+    text-align: center;
+}
+
+.resetContainer button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+.resetContainer button:hover {
+    background-color: #323960;
+    color: azure;
+    border: 1px solid #222745;
+
+}

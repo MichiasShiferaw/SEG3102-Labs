@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Calculator </title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+    <div>
+        <h1>Basic Calculator</h1>
+        <div th:switch="${error}">
+            <p th:case="'ValueFormatError'">
+                Wrong value(s) provided for the input(s) - must be a number
+            </p>
+            <p th:case="'UndefinedResult'">
+                Response created an undefined result (∞/-∞)- Try again with different values
+            </p>
+            <p th:case="'OperationFormatError'">
+                Wrong operation
+            </p>
+        </div>
+        <form th:action="@{/calc}" method="get">
+            <table>
+                <tr>
+                    <td>
+                        <label for="val1">First number:</label>
+                    </td>
+                    <td>
+                        <input name="val1" id="val1" th:name="val1" th:value="${val1}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="val2">Second Number:</label>
+                    </td>
+                    <td>
+                        <input name="val2" id="val2" th:name="val2" th:value="${val2}">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="res">Result:</label>
+                    </td>
+                    <td>
+                        <input name="res" id="res" th:name="res" th:value="${res}" readonly>
+                    </td>
+                </tr>
+            </table>
+            <table class="operations">
+                <tr>
+                    <td>
+                        <button type="submit" th:name="operation" th:value="sum">+</button>
+                    </td>
+                    <td>
+                        <button type="submit" th:name="operation" th:value="difference">-</button>
+                    </td>
+                    <td>
+                        <button type="submit" th:name="operation" th:value="product">x</button>
+                    </td>
+                    <td>
+                        <button type="submit" th:name="operation" th:value="quotient">/</button>
+                    </td>
+                </tr>
+            </table>
+            <div class='resetContainer'>
+                <button type="submit" th:name="operation" th:value="reset">Clear</button>
+            </div>
+        </form>
+        
+</body>
+
+</html>
